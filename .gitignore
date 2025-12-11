@@ -1,0 +1,8 @@
+# Terraform cache and state
+.terraform/
+*.tfstate
+*.tfstate.*
+
+infra/.terraform/
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
