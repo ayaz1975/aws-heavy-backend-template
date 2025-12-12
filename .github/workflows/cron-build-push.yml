@@ -1,20 +1,18 @@
-name: Build & Push API to ECR
+name: Build & Push CRON to ECR
 
 on:
   push:
     branches: [ main ]
     paths:
-      - "api/**"
-      - ".github/workflows/api-build-push.yml"
+      - 'cron/**'
+      - '.github/workflows/cron-build-push.yml'
   workflow_dispatch:
 
 env:
   AWS_REGION: eu-north-1
   AWS_ACCOUNT_ID: 636851749897
-  ECR_REPOSITORY: heavy-backend-api
+  ECR_REPOSITORY: heavy-backend-cron
   IMAGE_TAG: latest
-  ECS_CLUSTER_NAME: heavy-backend-cluster
-  ECS_SERVICE_NAME: heavy-backend-api-service
 
 jobs:
   build-and-push:
@@ -34,19 +32,11 @@ jobs:
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Build and push API image
+      - name: Build and push CRON image
         uses: docker/build-push-action@v5
         with:
-          context: ./api
+          context: ./cron
           push: true
           platforms: linux/amd64
           tags: |
             ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
-
-      - name: Force new ECS deployment
-        run: |
-          aws ecs update-service \
-            --cluster "${{ env.ECS_CLUSTER_NAME }}" \
-            --service "${{ env.ECS_SERVICE_NAME }}" \
-            --force-new-deployment \
-            --region "${{ env.AWS_REGION }}"

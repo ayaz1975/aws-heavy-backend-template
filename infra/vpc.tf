@@ -60,7 +60,7 @@ resource "aws_internet_gateway" "igw" {
 
 # EIP для NAT Gateway
 resource "aws_eip" "nat" {
-  vpc = true
+  domain = "vpc"
 
   tags = merge(local.common_tags, {
     Name = "${local.project_name}-nat-eip"
