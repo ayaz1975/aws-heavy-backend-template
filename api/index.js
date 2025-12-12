@@ -51,7 +51,7 @@ async function initDb() {
 app.get("/health", (req, res) => {
   res.json({
         status: "ok",
-    service: "heavy-api-v2",
+    service: "heavy-api-v3",
 
     time: new Date().toISOString(),
     db: dbStatus,
