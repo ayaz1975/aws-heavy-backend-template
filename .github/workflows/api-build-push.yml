@@ -9,12 +9,12 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: eu-north-1
-  AWS_ACCOUNT_ID: 636851749897
-  ECR_REPOSITORY: heavy-backend-api
-  IMAGE_TAG: latest
-  ECS_CLUSTER_NAME: heavy-backend-cluster
-  ECS_SERVICE_NAME: heavy-backend-api-service
+   AWS_REGION: eu-north-1
+   AWS_ACCOUNT_ID: 636851749897
+   ECR_REPOSITORY: heavy-backend-api      # ← ЭТО МЕНЯЕМ
+   IMAGE_TAG: latest
+   ECS_CLUSTER_NAME: heavy-backend-cluster
+   ECS_SERVICE_NAME: heavy-backend-api-service
 
 jobs:
   build-and-push:
