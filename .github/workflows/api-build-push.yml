@@ -8,16 +8,16 @@ on:
       - ".github/workflows/api-build-push.yml"
   workflow_dispatch:
 env:
-   AWS_REGION: eu-north-1
-   AWS_ACCOUNT_ID: 636851749897
+    AWS_REGION: eu-north-1
+    AWS_ACCOUNT_ID: 636851749897
 
-  # ← ВАЖНО: репозиторий именно API
-   ECR_REPOSITORY: training1-backend-api
-   IMAGE_TAG: latest
+    ECR_REPOSITORY: client2-backend-api
+    IMAGE_TAG: latest
+
+    ECS_CLUSTER_NAME: client2-backend-cluster
+    ECS_SERVICE_NAME: client2-backend-api-service
 
   # ← Кластер и сервис именно API
-   ECS_CLUSTER_NAME: training1-backend-cluster
-   ECS_SERVICE_NAME: training1-backend-api-service
 
 jobs:
   build-and-push:
