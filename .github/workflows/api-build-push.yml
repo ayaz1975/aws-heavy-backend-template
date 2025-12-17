@@ -11,11 +11,11 @@ env:
     AWS_REGION: eu-north-1
     AWS_ACCOUNT_ID: 636851749897
 
-    ECR_REPOSITORY: client3-backend-api
+    ECR_REPOSITORY: heavy-backend-api
     IMAGE_TAG: latest
 
-    ECS_CLUSTER_NAME: client3-backend-cluster
-    ECS_SERVICE_NAME: client3-backend-api-service
+    ECS_CLUSTER_NAME: heavy-backend-api-cluster
+    ECS_SERVICE_NAME: heavy-backend-api-service
 
   # ← Кластер и сервис именно API
 
