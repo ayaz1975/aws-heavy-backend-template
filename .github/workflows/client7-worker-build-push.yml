@@ -1,22 +1,22 @@
-name: Build & Push WORKER (client6) to ECR + Deploy ECS
+name: Build & Push WORKER (client7) to ECR + Deploy ECS
 
 on:
   push:
     branches: [ main ]
     paths:
       - "worker/**"
-      - ".github/workflows/client6-worker-build-push.yml"
+      - ".github/workflows/client7-worker-build-push.yml"
   workflow_dispatch:
 
 env:
   AWS_REGION: eu-north-1
   AWS_ACCOUNT_ID: 636851749897
 
-  ECR_REPOSITORY: client6-backend-worker
+  ECR_REPOSITORY: client7-backend-worker
   IMAGE_TAG: latest
 
-  ECS_CLUSTER_NAME: client6-backend-cluster
-  ECS_SERVICE_NAME: client6-backend-worker-service
+  ECS_CLUSTER_NAME: client7-backend-cluster
+  ECS_SERVICE_NAME: client7-backend-worker-service
 
 jobs:
   build-push-deploy:

@@ -1,18 +1,18 @@
-name: Build & Push CRON (client6) to ECR
+name: Build & Push CRON (client7) to ECR
 
 on:
   push:
     branches: [ main ]
     paths:
       - "cron/**"
-      - ".github/workflows/client6-cron-build-push.yml"
+      - ".github/workflows/client7-cron-build-push.yml"
   workflow_dispatch:
 
 env:
   AWS_REGION: eu-north-1
   AWS_ACCOUNT_ID: 636851749897
 
-  ECR_REPOSITORY: client6-backend-cron
+  ECR_REPOSITORY: client7-backend-cron
   IMAGE_TAG: latest
 
 jobs:
