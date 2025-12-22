@@ -17,10 +17,11 @@ This repository is my production-ready reference implementation used to deliver 
   - Deploy new version via `aws ecs update-service`
 
 ## Repository structure
+```text
 aws-heavy-backend-template/
-├─ api/ # API code (Node.js, Express)
-├─ worker/ # background jobs (worker)
-├─ cron/ # scheduled jobs (cron)
-├─ infra/ # Terraform (VPC, ECS, RDS, ALB, HTTPS)
+├─ api/        # API code (Node.js, Express)
+├─ worker/     # background jobs (worker)
+├─ cron/       # scheduled jobs (cron)
+├─ infra/      # Terraform (VPC, ECS, RDS, ALB, HTTPS)
 └─ .github/
-└─ workflows/ # GitHub Actions (build & deploy)
+   └─ workflows/  # GitHub Actions (build & deploy)
