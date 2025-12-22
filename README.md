@@ -1,28 +1,26 @@
-# AWS Heavy Backend Template (ECS + RDS + HTTPS)
+# AWS Backend Deployment on AWS (ECS Fargate + RDS + HTTPS)
 
-Готовый шаблон для деплоя бэкенда на AWS:
+**Service:** I deploy backend applications to AWS with ECS Fargate, PostgreSQL (RDS), HTTPS, custom domain, and CI/CD.
 
-- VPC + публичные / приватные сабнеты + NAT
+This repository is my production-ready reference implementation used to deliver client deployments quickly and consistently.
+
+## What you get (deliverables)
+- VPC (public/private subnets) + NAT
 - RDS PostgreSQL
-- ECS Fargate:
-  - API сервис
-  - Worker сервис
-  - Cron задачи через EventBridge
-- ALB + HTTPS (ACM сертификат) + домен
-- GitHub Actions:
-  - build & push Docker образов в ECR
-  - деплой новой версии через `aws ecs update-service`
+- ECS Fargate services:
+  - API service (Node.js / Express)
+  - Worker service (background jobs)
+  - Scheduled Cron tasks via EventBridge (RunTask)
+- Application Load Balancer (ALB) + HTTPS (ACM certificate) + custom domain
+- GitHub Actions CI/CD:
+  - Build & push Docker images to ECR
+  - Deploy new version via `aws ecs update-service`
 
----
-
-## 1. Структура проекта
-
-```text
+## Repository structure
 aws-heavy-backend-template/
-├── api/           # код API (Node.js, Express)
-├── worker/        # фоновые задачи (worker)
-├── cron/          # задачи по расписанию (cron job)
-├── infra/         # Terraform инфраструктура (VPC, ECS, RDS, ALB, HTTPS)
-└── .github/
-    └── workflows/ # GitHub Actions (build & deploy)
-
+├─ api/ # API code (Node.js, Express)
+├─ worker/ # background jobs (worker)
+├─ cron/ # scheduled jobs (cron)
+├─ infra/ # Terraform (VPC, ECS, RDS, ALB, HTTPS)
+└─ .github/
+└─ workflows/ # GitHub Actions (build & deploy)
