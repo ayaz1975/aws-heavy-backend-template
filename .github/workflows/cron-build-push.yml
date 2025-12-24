@@ -11,7 +11,7 @@ on:
 env:
   AWS_REGION: eu-north-1
   AWS_ACCOUNT_ID: 636851749897
-  ECR_REPOSITORY: training1-backend-cron
+  ECR_REPOSITORY: joon-backend-cron
   IMAGE_TAG: latest
   ECS_CLUSTER_NAME: training1-backend-cluster
   ECS_SERVICE_NAME: training1-backend-api-service  # или своё, если у тебя другое
