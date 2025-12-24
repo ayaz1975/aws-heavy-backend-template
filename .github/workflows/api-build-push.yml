@@ -14,7 +14,7 @@ env:
   ECR_REPOSITORY: joon-backend-api
   IMAGE_TAG: latest
 
-  ECS_CLUSTER_NAME: heavy-backend-cluster
+  ECS_CLUSTER_NAME: joon-backend-cluster
   ECS_SERVICE_NAME: joon-backend-api-service
 
 
