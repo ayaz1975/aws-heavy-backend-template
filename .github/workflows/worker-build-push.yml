@@ -11,10 +11,10 @@ on:
 env:
   AWS_REGION: eu-north-1
   AWS_ACCOUNT_ID: 636851749897
-  ECR_REPOSITORY: joon-backend-worker
+  ECR_REPOSITORY: ayaz-backend-worker
   IMAGE_TAG: latest
-  ECS_CLUSTER_NAME: joon-backend-cluster
-  ECS_SERVICE_NAME: joon-backend-worker-service
+  ECS_CLUSTER_NAME: ayaz-backend-cluster
+  ECS_SERVICE_NAME: ayaz-backend-worker-service
    
 jobs:
   build-and-push:
